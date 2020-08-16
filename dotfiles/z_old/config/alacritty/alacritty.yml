@@ -1,0 +1,52 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+# Cornejo's configuration
+
+window:
+  # Window decorations
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  decorations: full
+
+  # Window title
+  #title: Alacritty
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 20000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+# Spaces per Tab (changes require restart)
+tabspaces: 4
+
+font:
+  normal:
+    family: Fira Code Retina
+    style: Regular
+
+    #If bold and/or italic font faces are not specified, they will fall back to the value specified for the normal font.
+
+  #bold:
+    #family: monospace
+    #style: Bold
+
+  #italic:
+    #family: monospace
+    #style: Italic
+
+  #bold_italic:
+    #family: monospace
+    #style: Bold Italic
+
+  #font  size
+  size: 14.0
+
+cursor:
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Beam

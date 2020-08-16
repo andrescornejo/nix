@@ -1,0 +1,7 @@
+rofi.columns:                        1
+rofi.font:                           roboto mono 10
+rofi.color-normal:                   #<COLOR0>, #<COLOR15>, #<COLOR0>, #<COLORACT>, #<COLOR15>
+rofi.color-urgent:                   #<COLOR0>, #d6b48d, #22231D, #d6b48d, #<COLOR15>
+rofi.color-active:                   #<COLOR0>, #<COLOR14>, #<COLOR0>, #<COLOR14>, #<COLOR0>
+rofi.color-window:                   #<COLOR0>, #<COLORACT>, #<COLORIN>
+

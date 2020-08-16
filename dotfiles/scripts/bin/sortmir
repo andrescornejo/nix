@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# Sort pacman mirrors by speed.
+
+sdo=''
+
+# Set sudo if not run with sudo.
+if (( $EUID != 0 )); then
+    sdo='sudo'
+fi
+
+prompt_confirm() {
+  while true; do
+    read -r -n 1 -p "${1:-Continue?} [Y/n]: " REPLY
+    case $REPLY in
+      [yY]) echo ; return 0 ;;
+      '') echo ; return 0 ;;
+      [nN]) echo ; return 1 ;;
+      *) printf " \033[31m %s \n\033[0m" "invalid input"
+    esac 
+  done  
+}
+
+if ! command -v reflector &> /dev/null;
+then
+    echo "Reflector is not installed."
+    prompt_confirm "Would you like to install it?" || exit 0
+    echo "Installing Reflector..."
+    $sdo pacman -Syu reflector --noconfirm &> /dev/null
+    echo "Reflector installed successfully."
+fi
+
+echo "Sorting pacman mirrors..."
+$sdo reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+echo "Pacman mirrors sorted."
+exit 0

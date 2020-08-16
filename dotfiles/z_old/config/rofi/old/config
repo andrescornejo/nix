@@ -1,0 +1,11 @@
+/*Config file for Rofi
+ *Config made by Andres Cornejo
+ */
+//Settings
+rofi.icon-theme:	Newaita
+rofi.fullscreen:	false
+rofi.modi:		drun,run
+
+//External application settings
+rofi.terminal: 	alacritty
+rofi.sshclient: ssh
